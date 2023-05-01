@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f3f5fc;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+header img{
+    width:22px
+}
+/* -----------Formlario (form)------------ */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+textarea{
+    background: none;
+    border: none;
+    color: #0a3871;
+    font-size: 22px;
+    outline: none;
+    padding: 6px 12px;
+    resize: none;
+    width: 100%;
+    height: 50vh;
+}
+textarea::placeholder{
+    color: #0a3871;
+}
+small{
+    align-items: center;
+    color: #495057;
+    display: flex;
+    gap: 4px;
+}
+div.botones{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+button{
+    background: none;
+    border-radius: 10px;
+    border:1px solid #0a3871;
+    color: #0a3871;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+}
+button#Encriptar{
+    background-color: #0a3871;
+    color: #ffffff
+}
+/* ----------Section------------- */
+section{
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 30px 30px #0002;
+    padding: 22px;
+}
+div.result{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    gap: 16px;
+
+}
+div.result p{
+    font-size: 22px;
+    word-break: break-all;
+    
+}
+div.noresultado img{
+    display: none;
+}
+div.noresultado{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/*------------Media Query (cambiar elementos segun tamaño de pantalla)-------------*/
+@media (min-width: 480px){
+    div.botones{
+        flex-direction: row;
+    }
+}
+@media (min-width: 980px) {
+    body, main{
+        flex-direction: row;
+        width: 100%;
+    }
+    form{
+        padding: 32px;
+        min-height:calc(100vh - 32px);
+        width: 100%;
+    }
+    textarea{
+        height: 100%;
+    }
+    section{
+       min-width: 380px;
+       max-width: 380px;
+       padding: 32px;
+       
+    }
+    div.noresultado img{
+        display: block;
+    }
+    div.result p{
+        height: 75vh;
+        overflow-y: auto;
+    }
+}
