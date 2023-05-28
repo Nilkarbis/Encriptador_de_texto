@@ -9,12 +9,12 @@
   </head>
   <body>
     <header>
-      <img src="/alura.svg" alt="Alura" title="Alura">
+      <img src="public/alura.svg" alt="Alura" title="Alura">
     </header>
     <main>
       <form>
         <textarea placeholder="Ingrese el texo aqui" autofocus title="Ingrese el texo aqui"></textarea>
-        <small title="Solo letras minusculas y sin acentos"><img src="/info.svg" alt="Info:"> Solo letras minusculas y sin acentos</small>
+        <small title="Solo letras minusculas y sin acentos"><img src="public/info.svg" alt="Info:"> Solo letras minusculas y sin acentos</small>
   
         <div class="botones">
           <button type="button" id="Encriptar">Encriptar</button>
@@ -23,12 +23,16 @@
       </form>
       <section>
         <div class="noresultado">
-            <img src="/ilustration.svg" alt="Ningun mensaje fue encontrado." title="Ningun mensaje fue encontrado.">
+            <img src="public/ilustration.svg" alt="Ningun mensaje fue encontrado." title="Ningun mensaje fue encontrado.">
             <h3>Ningun mensaje fue encontrado</h3>
             <p>Ingrese el texto que desea encriptar o desencriptar.</p>
         </div>    
+        <div class="result">
+          <p class="resultText"></p>
+          <button type="button" id="copiar">Copiar</button>
+          </div>
       </section>
     </main>
-    <script type="module" src="/index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

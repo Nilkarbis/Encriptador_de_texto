@@ -40,21 +40,20 @@ const botonEncriptar = document.querySelector('#Encriptar')
 
 const botonDesencriptar = document.querySelector('#Desencriptar')
 
-const resultSection = document.querySelector('section')
-/* funcion que retorna el html del resultado */
-function renderResultHtml (value) {
-  return `<div class="result">
-  <p>${value}</p>
-  <button type="button" id="copiar">Copiar</button>
-  </div>`
-}
+const noresultado = document.querySelector(".noresultado")
+const result = document.querySelector(".result")
+const resultText = document.querySelector(".resultText")
+const copiar = document.querySelector("#copiar")
+
 /* evento de encriptar */
 botonEncriptar.addEventListener('click', () => {
   const value = input.value
   if (value) {
     const encriptado = encriptar(value)
-    resultSection.innerHTML = renderResultHtml(encriptado)
     input.value = ''
+    result.style.display = "flex"
+    noresultado.style.display = "none"
+    resultText.innerText = encriptado
   }
 })
 
@@ -63,7 +62,22 @@ botonDesencriptar.addEventListener('click', () => {
   const value = input.value
   if (value) {
     const desencriptado = desencriptar(value)
-    resultSection.innerHTML = renderResultHtml(desencriptado)
     input.value = ''
+    noresultado.style.display= "none"
+    result.style.display= "flex"
+    resultText.innerText= desencriptado
   }
+})
+
+copiar.addEventListener("click", () => {
+  navigator.clipboard.writeText(resultText.innerText)
+  .then(() => {
+    copiar.innerText="Copiado"
+    setTimeout(() =>{
+    copiar.innerText="Copiar"
+    }, 1500)
+  })
+  .catch(err => {
+    console.error('Error al copiar al portapapeles:', err)
+  })
 })
